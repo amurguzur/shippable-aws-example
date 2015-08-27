@@ -5,6 +5,11 @@ language: java
 jdk:
   - oraclejdk8
 
+# install maven and cobertura
+before_install:
+  - apt-get install -y maven
+  - apt-get install -y cobertura
+
 after_success:
   - mvn clean cobertura:cobertura
   - mvn test
